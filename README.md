@@ -1,5 +1,7 @@
 # Runbook RAG Review
 
+[![CI](https://github.com/sranganatha/runbook-rag-review/actions/workflows/ci.yml/badge.svg)](https://github.com/sranganatha/runbook-rag-review/actions/workflows/ci.yml)
+
 A local evaluation of whether answers over versioned operational runbooks are supported by evidence that applies to the caller's team and requested date.
 
 > A citation is not proof of support; the cited passage must justify the answer and apply to the requested scope and version.
@@ -35,31 +37,34 @@ The current implementation provides:
 - Supported, historical, absent-evidence, obsolete-guidance, wrong-scope, conflict, and injected-instruction cases
 - Python 3.12 standard-library contracts for documents, questions, answer statuses, and review decisions
 - Offline checks for fixture counts, digests, exact evidence references, version periods, split identity, and state-dependent review fields
+- Deterministic paragraph chunks with exact offsets and content-derived IDs
+- Atomic SQLite FTS5 index replacement with corpus and chunking identity
+- Ranked lexical retrieval filtered by trusted team scope and requested date
 
-Retrieval, answer generation, review persistence, reporting, model calls, and container commands are not implemented in this slice.
+Answer generation, review persistence, evaluation reporting, and model calls are not implemented yet.
 
 ## What the fixtures establish
 
 Labels identify required facts and exact source evidence separately from future prompts and provider fixtures. An abstention label cannot contain a hidden expected answer; answered and conflict labels must point to exact text in a known document version. Changing source text without updating its digest fails validation.
 
-The development split exists for later lexical retrieval tuning. The holdout split stays frozen for final reporting, where every case—including failures and abstentions—must be counted.
+The development split exists for later lexical retrieval tuning. The holdout split stays frozen for final reporting, where every case, including failures and abstentions, must be counted.
 
 ## Scope
 
-This is a local RAG correctness and review evaluation, not a managed knowledge base, production assistant, vector-database comparison, chat-memory system, fine-tuning pipeline, or deployment project. The complete MVP will use one SQLite FTS5 index and one explicitly selected model connection; default checks will remain offline and credential-free.
+This is a local RAG correctness and review evaluation, not a managed knowledge base, production assistant, vector-database comparison, chat-memory system, fine-tuning pipeline, or deployment project. It uses one SQLite FTS5 index and will add one explicitly selected model connection; default checks remain offline and credential-free.
 
 ## Local validation
 
-Requires Python 3.12 or newer and no third-party packages:
+Clean validation requires Git, Make, and a running Podman machine. No host Python packages are installed:
 
 ```bash
 git clone https://github.com/sranganatha/runbook-rag-review.git
 cd runbook-rag-review
-python -m unittest discover -s tests -v
-python -m runbook_rag_review.validate_fixtures
+podman info
+make test-container
 ```
 
-Expect `validated 12 documents and 20 questions (8 development, 12 holdout)`. The validator reads `fixtures/documents.json` and `fixtures/questions.json`; it does not call a model or network service.
+For source development with Python 3.12 already available, `make check` and `make test` use only the standard library. Expect `validated 12 documents and 20 questions (8 development, 12 holdout)`. No validation command calls a model or network service.
 
 ## Design reference
 

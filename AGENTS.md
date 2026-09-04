@@ -9,7 +9,7 @@ The system must answer questions over versioned operational runbooks while expos
 ## Scope rules
 
 - Keep retrieval, fixtures, evaluation, and review storage local and deterministic by default.
-- Use 10–15 original synthetic FinOps runbooks and exactly twenty labeled questions.
+- Use 10-15 original synthetic FinOps runbooks and exactly twenty labeled questions.
 - Implement one SQLite FTS5 index, one baseline retrieval configuration, one scope/version-aware variant, and one model connection.
 - Do not add a UI, chat memory, managed knowledge base, vector database, fine-tuning pipeline, provider router, or deployment platform.
 - Prefer Python's standard library, SQLite, and JSON. Add a dependency only for a current acceptance criterion.
