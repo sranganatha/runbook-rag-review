@@ -42,8 +42,10 @@ The current implementation provides:
 - Ranked lexical retrieval filtered by trusted team scope and requested date
 - Typed answered, abstained, and conflict outputs with strict evidence ID validation
 - Deterministic fixture generation from supplied passages with context, output, and call budgets
+- Immutable run snapshots with exact hashed evidence and versioned JSON review history
+- Accept, reject, and correct review decisions with stale-answer protection
 
-Real-model generation, review persistence, and evaluation reporting are not implemented yet.
+Real-model generation and evaluation reporting are not implemented yet.
 
 ## What the fixtures establish
 
