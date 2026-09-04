@@ -18,6 +18,9 @@ class RetrievalHit:
     end_offset: int
     text: str
     score: float
+    effective_from: str
+    effective_to: str | None
+    team_scope: str
 
 
 @dataclass(frozen=True)
@@ -85,16 +88,14 @@ def retrieve(
     finally:
         connection.close()
 
-    hits: list[RetrievalHit] = []
-    for row in rows:
-        *hit_fields, effective_from, effective_to, team_scope = row
-        if team_scope != authorized_scope or effective_from > as_of.isoformat() or (
-            effective_to is not None and effective_to < as_of.isoformat()
+    hits = [RetrievalHit(*row) for row in rows]
+    for hit in hits:
+        if hit.team_scope != authorized_scope or hit.effective_from > as_of.isoformat() or (
+            hit.effective_to is not None and hit.effective_to < as_of.isoformat()
         ):
             raise ContractError(
                 "retrieval_filter_violation", "retrieved chunk violates trusted filters"
             )
-        hits.append(RetrievalHit(*hit_fields))
 
     return RetrievalResult(
         query=query,
