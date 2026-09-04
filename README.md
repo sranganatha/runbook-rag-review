@@ -40,8 +40,10 @@ The current implementation provides:
 - Deterministic paragraph chunks with exact offsets and content-derived IDs
 - Atomic SQLite FTS5 index replacement with corpus and chunking identity
 - Ranked lexical retrieval filtered by trusted team scope and requested date
+- Typed answered, abstained, and conflict outputs with strict evidence ID validation
+- Deterministic fixture generation from supplied passages with context, output, and call budgets
 
-Answer generation, review persistence, evaluation reporting, and model calls are not implemented yet.
+Real-model generation, review persistence, and evaluation reporting are not implemented yet.
 
 ## What the fixtures establish
 
