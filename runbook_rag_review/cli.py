@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Sequence
 
 from runbook_rag_review.contracts import ContractError
+from runbook_rag_review.evaluate import run_evaluation
 from runbook_rag_review.review import load_reviewer_ids, record_review
 
 
@@ -23,9 +24,31 @@ def main(argv: Sequence[str] | None = None) -> int:
     review.add_argument("--rationale", required=True)
     review.add_argument("--corrected-claim", action="append", default=[])
     review.add_argument("--corrected-evidence-id", action="append", default=[])
+    evaluate = commands.add_parser("evaluate", help="write the offline evaluation report")
+    evaluate.add_argument("--output-dir", type=Path, default=Path("artifacts"))
+    evaluate.add_argument("--k", type=int, default=5)
     args = parser.parse_args(argv)
 
-    reviewer_fixture = Path(__file__).parents[1] / "fixtures" / "reviewers.json"
+    fixture_dir = Path(__file__).parents[1] / "fixtures"
+    if args.command == "evaluate":
+        try:
+            report = run_evaluation(fixture_dir, args.output_dir, k=args.k)
+        except ContractError as error:
+            print(json.dumps({"error": error.code, "message": str(error)}), file=sys.stderr)
+            return 2
+        print(
+            json.dumps(
+                {
+                    "configurations": list(report["configurations"]),
+                    "execution_mode": report["execution_mode"],
+                    "output_dir": str(args.output_dir),
+                },
+                sort_keys=True,
+            )
+        )
+        return 0
+
+    reviewer_fixture = fixture_dir / "reviewers.json"
     try:
         stored_review = record_review(
             args.store,

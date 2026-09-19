@@ -40,12 +40,17 @@ The current implementation provides:
 - Deterministic paragraph chunks with exact offsets and content-derived IDs
 - Atomic SQLite FTS5 index replacement with corpus and chunking identity
 - Ranked lexical retrieval filtered by trusted team scope and requested date
+- Scope-only ranking compared with scope-and-version filtering before ranking
 - Typed answered, abstained, and conflict outputs with strict evidence ID validation
 - Deterministic fixture generation from supplied passages with context, output, and call budgets
 - Immutable run snapshots with exact hashed evidence and versioned JSON review history
 - Accept, reject, and correct review decisions with stale-answer protection
+- Complete fixed-label development and holdout reporting with separate safety metrics
 
-Real-model generation and evaluation reporting are not implemented yet.
+See the [offline evaluation report](artifacts/evaluation.md). It uses deterministic fixture
+answers to exercise retrieval and scoring, so it is not evidence of real-model quality.
+
+Real-model generation is not implemented yet.
 
 ## What the fixtures establish
 
@@ -68,7 +73,10 @@ podman info
 make test-container
 ```
 
-For source development with Python 3.12 already available, `make check` and `make test` use only the standard library. Expect `validated 12 documents and 20 questions (8 development, 12 holdout)`. No validation command calls a model or network service.
+For source development with Python 3.12 already available, `make check`, `make test`, and
+`make report` use only the standard library. Expect
+`validated 12 documents and 20 questions (8 development, 12 holdout)`. No validation or
+report command calls a model or network service.
 
 ## Design reference
 
