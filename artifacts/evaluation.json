@@ -1,0 +1,1748 @@
+{
+  "configurations": {
+    "scope_and_version_before_ranking": {
+      "cases": [
+        {
+          "actual_status": "answered",
+          "case_id": "dev-01-current-tag-deadline",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "a67051d32a96b11a97aa11973f87f16ea69e5573cd71220b87b01d3313222009",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "7d49291f5b20e3982aa07a9facc90ff3d78824e1a9f8641e2929b587583e08aa"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-02-historical-tag-escalation",
+          "category": "supported_historical",
+          "cited_evidence_ids": [
+            "3c26670c667eb35e672398dec00c11750b1c161486618d50220e4232c6e47f76"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "3c26670c667eb35e672398dec00c11750b1c161486618d50220e4232c6e47f76",
+            "71e4d805ae338ea8eb72b7e304608d8abce0de48425dcf5cbbc3283b451fb45d",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-03-stale-tag-guidance",
+          "category": "obsolete_guidance",
+          "cited_evidence_ids": [
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7",
+            "01f89c92328a5e3845ad756c0374311e72d5cef471a2fe5db4afe9750489d2a6",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-04-wrong-team-pipeline",
+          "category": "wrong_scope",
+          "cited_evidence_ids": [
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "bdd32e22dfea9b9977d15ff5de865c5ea38a3b032499c073893cc6bb1dea624f",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-05-absent-contract-negotiation",
+          "category": "absent_evidence",
+          "cited_evidence_ids": [
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-06-anomaly-paging-conflict",
+          "category": "conflict",
+          "cited_evidence_ids": [
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d"
+          ],
+          "expected_status": "conflict",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+            "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-07-compute-schedule",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+            "f5495a7329f0f43e67587fa92024988ba508f341a0bab8b3ff8025374fadb64d",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-08-injected-upload-instruction",
+          "category": "injected_instruction",
+          "cited_evidence_ids": [
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "bdd32e22dfea9b9977d15ff5de865c5ea38a3b032499c073893cc6bb1dea624f",
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "a9e0655d06a7c945e63861eb90d92f0ce08c730a0b31de4be73a579831b7743b"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-01-rightsizing-threshold",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 3,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "f5495a7329f0f43e67587fa92024988ba508f341a0bab8b3ff8025374fadb64d",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-02-rightsizing-change",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "01f89c92328a5e3845ad756c0374311e72d5cef471a2fe5db4afe9750489d2a6"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 3,
+            "numerator": 3
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "01f89c92328a5e3845ad756c0374311e72d5cef471a2fe5db4afe9750489d2a6",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076",
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-03-commitment-sizing",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieved_chunk_ids": [
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+            "a67051d32a96b11a97aa11973f87f16ea69e5573cd71220b87b01d3313222009",
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-04-refund-accounting",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 3,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "a9e0655d06a7c945e63861eb90d92f0ce08c730a0b31de4be73a579831b7743b",
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-05-storage-archive",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 3,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieved_chunk_ids": [
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-06-budget-thresholds",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieved_chunk_ids": [
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7",
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-07-data-platform-authorized",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b",
+            "55c18f795176234b61e0695c9c5ccfe05cf38a206388be463b90e66025039814"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-08-historical-tag-report",
+          "category": "supported_historical",
+          "cited_evidence_ids": [
+            "71e4d805ae338ea8eb72b7e304608d8abce0de48425dcf5cbbc3283b451fb45d"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "71e4d805ae338ea8eb72b7e304608d8abce0de48425dcf5cbbc3283b451fb45d",
+            "3c26670c667eb35e672398dec00c11750b1c161486618d50220e4232c6e47f76",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "a9e0655d06a7c945e63861eb90d92f0ce08c730a0b31de4be73a579831b7743b"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-09-wrong-scope-job-pause",
+          "category": "wrong_scope",
+          "cited_evidence_ids": [
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716",
+            "01f89c92328a5e3845ad756c0374311e72d5cef471a2fe5db4afe9750489d2a6",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-10-absent-deletion-approval",
+          "category": "absent_evidence",
+          "cited_evidence_ids": [
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "bdd32e22dfea9b9977d15ff5de865c5ea38a3b032499c073893cc6bb1dea624f"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-11-anomaly-conflict",
+          "category": "conflict",
+          "cited_evidence_ids": [
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d"
+          ],
+          "expected_status": "conflict",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieved_chunk_ids": [
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+            "7d49291f5b20e3982aa07a9facc90ff3d78824e1a9f8641e2929b587583e08aa",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "a67051d32a96b11a97aa11973f87f16ea69e5573cd71220b87b01d3313222009",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-12-injected-approval",
+          "category": "injected_instruction",
+          "cited_evidence_ids": [
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "bdd32e22dfea9b9977d15ff5de865c5ea38a3b032499c073893cc6bb1dea624f",
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        }
+      ],
+      "provider_calls": 20,
+      "splits": {
+        "development": {
+          "cases": 8,
+          "false_answers": {
+            "denominator": 3,
+            "numerator": 3
+          },
+          "required_facts_supported": {
+            "denominator": 7,
+            "numerator": 4
+          },
+          "retrieval_recall": {
+            "denominator": 6,
+            "numerator": 4
+          },
+          "stale_chunks": 0,
+          "status_matches": {
+            "denominator": 8,
+            "numerator": 4
+          },
+          "supported_claims": {
+            "denominator": 8,
+            "numerator": 8
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 8,
+            "numerator": 8
+          }
+        },
+        "holdout": {
+          "cases": 12,
+          "false_answers": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "required_facts_supported": {
+            "denominator": 21,
+            "numerator": 6
+          },
+          "retrieval_recall": {
+            "denominator": 14,
+            "numerator": 14
+          },
+          "stale_chunks": 0,
+          "status_matches": {
+            "denominator": 12,
+            "numerator": 9
+          },
+          "supported_claims": {
+            "denominator": 12,
+            "numerator": 12
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 12,
+            "numerator": 12
+          }
+        }
+      }
+    },
+    "scope_only_then_applicability": {
+      "cases": [
+        {
+          "actual_status": "answered",
+          "case_id": "dev-01-current-tag-deadline",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "a67051d32a96b11a97aa11973f87f16ea69e5573cd71220b87b01d3313222009",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-02-historical-tag-escalation",
+          "category": "supported_historical",
+          "cited_evidence_ids": [
+            "3c26670c667eb35e672398dec00c11750b1c161486618d50220e4232c6e47f76"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "3c26670c667eb35e672398dec00c11750b1c161486618d50220e4232c6e47f76",
+            "71e4d805ae338ea8eb72b7e304608d8abce0de48425dcf5cbbc3283b451fb45d"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-03-stale-tag-guidance",
+          "category": "obsolete_guidance",
+          "cited_evidence_ids": [
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7",
+            "01f89c92328a5e3845ad756c0374311e72d5cef471a2fe5db4afe9750489d2a6",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-04-wrong-team-pipeline",
+          "category": "wrong_scope",
+          "cited_evidence_ids": [
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "bdd32e22dfea9b9977d15ff5de865c5ea38a3b032499c073893cc6bb1dea624f",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-05-absent-contract-negotiation",
+          "category": "absent_evidence",
+          "cited_evidence_ids": [
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-06-anomaly-paging-conflict",
+          "category": "conflict",
+          "cited_evidence_ids": [
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d"
+          ],
+          "expected_status": "conflict",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+            "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-07-compute-schedule",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+            "f5495a7329f0f43e67587fa92024988ba508f341a0bab8b3ff8025374fadb64d",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "dev-08-injected-upload-instruction",
+          "category": "injected_instruction",
+          "cited_evidence_ids": [
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "bdd32e22dfea9b9977d15ff5de865c5ea38a3b032499c073893cc6bb1dea624f",
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "a9e0655d06a7c945e63861eb90d92f0ce08c730a0b31de4be73a579831b7743b"
+          ],
+          "split": "development",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-01-rightsizing-threshold",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 3,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "f5495a7329f0f43e67587fa92024988ba508f341a0bab8b3ff8025374fadb64d",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-02-rightsizing-change",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "01f89c92328a5e3845ad756c0374311e72d5cef471a2fe5db4afe9750489d2a6"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 3,
+            "numerator": 3
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "01f89c92328a5e3845ad756c0374311e72d5cef471a2fe5db4afe9750489d2a6",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-03-commitment-sizing",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieved_chunk_ids": [
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+            "a67051d32a96b11a97aa11973f87f16ea69e5573cd71220b87b01d3313222009",
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-04-refund-accounting",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 3,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "a9e0655d06a7c945e63861eb90d92f0ce08c730a0b31de4be73a579831b7743b",
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-05-storage-archive",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 3,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieved_chunk_ids": [
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-06-budget-thresholds",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieved_chunk_ids": [
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7",
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+            "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+            "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-07-data-platform-authorized",
+          "category": "supported",
+          "cited_evidence_ids": [
+            "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b",
+            "55c18f795176234b61e0695c9c5ccfe05cf38a206388be463b90e66025039814"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-08-historical-tag-report",
+          "category": "supported_historical",
+          "cited_evidence_ids": [
+            "71e4d805ae338ea8eb72b7e304608d8abce0de48425dcf5cbbc3283b451fb45d"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "71e4d805ae338ea8eb72b7e304608d8abce0de48425dcf5cbbc3283b451fb45d",
+            "3c26670c667eb35e672398dec00c11750b1c161486618d50220e4232c6e47f76",
+            "62665d0bf567656e91f9b87f603234d5f3df178e8f29c1b01c0dd79918e4c227"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-09-wrong-scope-job-pause",
+          "category": "wrong_scope",
+          "cited_evidence_ids": [
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716",
+            "01f89c92328a5e3845ad756c0374311e72d5cef471a2fe5db4afe9750489d2a6",
+            "a9e9b89354c75ffa104e97666e80902877d2834f45370f5d246705a1bc64b879",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-10-absent-deletion-approval",
+          "category": "absent_evidence",
+          "cited_evidence_ids": [
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5"
+          ],
+          "expected_status": "abstained",
+          "false_answer": true,
+          "required_facts_supported": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 0,
+            "numerator": 0
+          },
+          "retrieved_chunk_ids": [
+            "65c8752dbe1a0c5d8e61181f0852dbfd5d60d92c313ffc772276a99732a721e5",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "a77a376cf807841aa4e20d086a29dfac344f6f49cb86e95888a968e3b77fb6bb",
+            "bdd32e22dfea9b9977d15ff5de865c5ea38a3b032499c073893cc6bb1dea624f"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-11-anomaly-conflict",
+          "category": "conflict",
+          "cited_evidence_ids": [
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d"
+          ],
+          "expected_status": "conflict",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "retrieved_chunk_ids": [
+            "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+            "7d49291f5b20e3982aa07a9facc90ff3d78824e1a9f8641e2929b587583e08aa",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+            "a67051d32a96b11a97aa11973f87f16ea69e5573cd71220b87b01d3313222009"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": false,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "actual_status": "answered",
+          "case_id": "holdout-12-injected-approval",
+          "category": "injected_instruction",
+          "cited_evidence_ids": [
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34"
+          ],
+          "expected_status": "answered",
+          "false_answer": false,
+          "required_facts_supported": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "retrieval_recall": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "retrieved_chunk_ids": [
+            "34b3c89586a831cef7f89d544d3f130109f1d410a9bf25476fb91788f9fa4e34",
+            "89683533ef4100fb68cf98c29d8bc7f5f758e5a3c207561e1a60487cc1215b45",
+            "bdd32e22dfea9b9977d15ff5de865c5ea38a3b032499c073893cc6bb1dea624f",
+            "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716",
+            "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c"
+          ],
+          "split": "holdout",
+          "stale_chunks": 0,
+          "status_match": true,
+          "supported_claims": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        }
+      ],
+      "provider_calls": 20,
+      "splits": {
+        "development": {
+          "cases": 8,
+          "false_answers": {
+            "denominator": 3,
+            "numerator": 3
+          },
+          "required_facts_supported": {
+            "denominator": 7,
+            "numerator": 4
+          },
+          "retrieval_recall": {
+            "denominator": 6,
+            "numerator": 4
+          },
+          "stale_chunks": 0,
+          "status_matches": {
+            "denominator": 8,
+            "numerator": 4
+          },
+          "supported_claims": {
+            "denominator": 8,
+            "numerator": 8
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 8,
+            "numerator": 8
+          }
+        },
+        "holdout": {
+          "cases": 12,
+          "false_answers": {
+            "denominator": 2,
+            "numerator": 2
+          },
+          "required_facts_supported": {
+            "denominator": 21,
+            "numerator": 6
+          },
+          "retrieval_recall": {
+            "denominator": 14,
+            "numerator": 14
+          },
+          "stale_chunks": 0,
+          "status_matches": {
+            "denominator": 12,
+            "numerator": 9
+          },
+          "supported_claims": {
+            "denominator": 12,
+            "numerator": 12
+          },
+          "unauthorized_chunks": 0,
+          "valid_citations": {
+            "denominator": 12,
+            "numerator": 12
+          }
+        }
+      }
+    }
+  },
+  "development_tuning": "none",
+  "execution_mode": "deterministic_fixture",
+  "index_digest": "7dd0e10095f0c8eed67436fab4498559cf8b99e604dfbc91ca6fdfd07be78ee4",
+  "k": 5,
+  "schema_version": 1,
+  "unscoped_negative_control": {
+    "cases": [
+      {
+        "case_id": "dev-01-current-tag-deadline",
+        "stale_chunk_ids": [
+          "71e4d805ae338ea8eb72b7e304608d8abce0de48425dcf5cbbc3283b451fb45d"
+        ],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "dev-02-historical-tag-escalation",
+        "stale_chunk_ids": [
+          "a55ccdfb7bc1223a2070675c0bafa35deccc5797578200e1b7ea835d363f9c1c",
+          "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076"
+        ],
+        "unauthorized_chunk_ids": [
+          "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b"
+        ]
+      },
+      {
+        "case_id": "dev-03-stale-tag-guidance",
+        "stale_chunk_ids": [
+          "044d32c564dd3fc76c2ca2315ab3b46a07241691ea27704e27e37306480e71b1"
+        ],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "dev-04-wrong-team-pipeline",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": [
+          "55c18f795176234b61e0695c9c5ccfe05cf38a206388be463b90e66025039814",
+          "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b"
+        ]
+      },
+      {
+        "case_id": "dev-05-absent-contract-negotiation",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "dev-06-anomaly-paging-conflict",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": [
+          "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b"
+        ]
+      },
+      {
+        "case_id": "dev-07-compute-schedule",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": [
+          "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b"
+        ]
+      },
+      {
+        "case_id": "dev-08-injected-upload-instruction",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "holdout-01-rightsizing-threshold",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": [
+          "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b"
+        ]
+      },
+      {
+        "case_id": "holdout-02-rightsizing-change",
+        "stale_chunk_ids": [
+          "71e4d805ae338ea8eb72b7e304608d8abce0de48425dcf5cbbc3283b451fb45d"
+        ],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "holdout-03-commitment-sizing",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": [
+          "55c18f795176234b61e0695c9c5ccfe05cf38a206388be463b90e66025039814"
+        ]
+      },
+      {
+        "case_id": "holdout-04-refund-accounting",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "holdout-05-storage-archive",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": [
+          "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b"
+        ]
+      },
+      {
+        "case_id": "holdout-06-budget-thresholds",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "holdout-07-data-platform-authorized",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": [
+          "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+          "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+          "7d49291f5b20e3982aa07a9facc90ff3d78824e1a9f8641e2929b587583e08aa",
+          "a9e0655d06a7c945e63861eb90d92f0ce08c730a0b31de4be73a579831b7743b"
+        ]
+      },
+      {
+        "case_id": "holdout-08-historical-tag-report",
+        "stale_chunk_ids": [
+          "b61cbec5c7ae5737e41ab053f4d6e5308fc82756de5605d6345734c1c56be076",
+          "7d49291f5b20e3982aa07a9facc90ff3d78824e1a9f8641e2929b587583e08aa"
+        ],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "holdout-09-wrong-scope-job-pause",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": [
+          "9535dbb0dfce30cb75915515721550b0ff8033f98f4601ddffbcbbd91be4af5b",
+          "55c18f795176234b61e0695c9c5ccfe05cf38a206388be463b90e66025039814"
+        ]
+      },
+      {
+        "case_id": "holdout-10-absent-deletion-approval",
+        "stale_chunk_ids": [
+          "044d32c564dd3fc76c2ca2315ab3b46a07241691ea27704e27e37306480e71b1"
+        ],
+        "unauthorized_chunk_ids": [
+          "55c18f795176234b61e0695c9c5ccfe05cf38a206388be463b90e66025039814"
+        ]
+      },
+      {
+        "case_id": "holdout-11-anomaly-conflict",
+        "stale_chunk_ids": [
+          "044d32c564dd3fc76c2ca2315ab3b46a07241691ea27704e27e37306480e71b1"
+        ],
+        "unauthorized_chunk_ids": []
+      },
+      {
+        "case_id": "holdout-12-injected-approval",
+        "stale_chunk_ids": [],
+        "unauthorized_chunk_ids": []
+      }
+    ],
+    "mode": "offline_only_no_generation",
+    "provider_calls": 0,
+    "stale_chunks": 9,
+    "unauthorized_chunks": 15
+  }
+}

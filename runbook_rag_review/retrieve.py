@@ -40,6 +40,43 @@ def retrieve(
     *,
     limit: int = 5,
 ) -> RetrievalResult:
+    return _retrieve(
+        index_path,
+        query,
+        authorized_scope,
+        as_of,
+        limit=limit,
+        version_filter_before_ranking=True,
+    )
+
+
+def retrieve_scope_only_baseline(
+    index_path: Path,
+    query: str,
+    authorized_scope: str,
+    as_of: date,
+    *,
+    limit: int = 5,
+) -> RetrievalResult:
+    return _retrieve(
+        index_path,
+        query,
+        authorized_scope,
+        as_of,
+        limit=limit,
+        version_filter_before_ranking=False,
+    )
+
+
+def _retrieve(
+    index_path: Path,
+    query: str,
+    authorized_scope: str,
+    as_of: date,
+    *,
+    limit: int,
+    version_filter_before_ranking: bool,
+) -> RetrievalResult:
     if not index_path.is_file():
         raise ContractError("index_not_found", str(index_path))
     if not isinstance(query, str):
@@ -59,8 +96,20 @@ def retrieve(
         ).fetchone()
         if digest_row is None:
             raise ContractError("invalid_index", "index identity is missing")
-        rows = connection.execute(
+        version_clause = (
             """
+              AND chunks.effective_from <= ?
+              AND (chunks.effective_to IS NULL OR chunks.effective_to >= ?)
+            """
+            if version_filter_before_ranking
+            else ""
+        )
+        parameters: tuple[object, ...] = (match_query, authorized_scope)
+        if version_filter_before_ranking:
+            parameters += (as_of.isoformat(), as_of.isoformat())
+        parameters += (limit,)
+        rows = connection.execute(
+            f"""
             SELECT
                 chunks.chunk_id,
                 chunks.document_id,
@@ -76,19 +125,23 @@ def retrieve(
             JOIN chunks ON chunks.rowid = chunks_fts.rowid
             WHERE chunks_fts MATCH ?
               AND chunks.team_scope = ?
-              AND chunks.effective_from <= ?
-              AND (chunks.effective_to IS NULL OR chunks.effective_to >= ?)
+              {version_clause}
             ORDER BY score, chunks.chunk_id
             LIMIT ?
             """,
-            (match_query, authorized_scope, as_of.isoformat(), as_of.isoformat(), limit),
+            parameters,
         ).fetchall()
     except sqlite3.DatabaseError as error:
         raise ContractError("invalid_index", "index cannot be queried") from error
     finally:
         connection.close()
 
-    hits = [RetrievalHit(*row) for row in rows]
+    hits = [
+        hit
+        for hit in (RetrievalHit(*row) for row in rows)
+        if hit.effective_from <= as_of.isoformat()
+        and (hit.effective_to is None or hit.effective_to >= as_of.isoformat())
+    ]
     for hit in hits:
         if hit.team_scope != authorized_scope or hit.effective_from > as_of.isoformat() or (
             hit.effective_to is not None and hit.effective_to < as_of.isoformat()
