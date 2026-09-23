@@ -46,6 +46,7 @@ The current implementation provides:
 - Immutable run snapshots with exact hashed evidence and versioned JSON review history
 - Accept, reject, and correct review decisions with stale-answer protection
 - Complete fixed-label development and holdout reporting with separate safety metrics
+- Local ingest and fixture-backed ask commands with immutable saved runs
 
 See the [offline evaluation report](artifacts/evaluation.md). It uses deterministic fixture
 answers to exercise retrieval and scoring, so it is not evidence of real-model quality.
@@ -77,6 +78,24 @@ For source development with Python 3.12 already available, `make check`, `make t
 `make report` use only the standard library. Expect
 `validated 12 documents and 20 questions (8 development, 12 holdout)`. No validation or
 report command calls a model or network service.
+
+## Local fixture workflow
+
+Build the bundled synthetic corpus index, then ask with scope from a caller fixture:
+
+```bash
+python -m runbook_rag_review.cli ingest --index .local/runbooks.db
+python -m runbook_rag_review.cli ask \
+  --index .local/runbooks.db \
+  --store .local/reviews \
+  --run-id demo-001 \
+  --caller-id caller-fixture-finops \
+  --as-of 2026-01-15 \
+  --question "What are the monthly budget thresholds?"
+```
+
+The ask command uses deterministic fixture generation and saves the exact retrieval and
+answer under the explicit run ID. It does not call a model or network service.
 
 ## Design reference
 

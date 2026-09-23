@@ -1,0 +1,10 @@
+[
+  {
+    "caller_id": "caller-fixture-finops",
+    "authorized_scope": "finops"
+  },
+  {
+    "caller_id": "caller-fixture-data-platform",
+    "authorized_scope": "data-platform"
+  }
+]
