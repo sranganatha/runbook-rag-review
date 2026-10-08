@@ -48,6 +48,7 @@ The current implementation provides:
 - Complete fixed-label development and holdout reporting with separate safety metrics
 - Local ingest and fixture-backed ask commands with immutable saved runs
 - Bounded local-model verification with Qwen 2.5 1.5B served by Ollama in Podman
+- Optional bounded cloud verification with Amazon Nova Micro through Bedrock
 
 See the [offline evaluation report](artifacts/evaluation.md). It uses deterministic fixture
 answers to exercise retrieval and scoring, so it is not evidence of real-model quality.
@@ -55,6 +56,9 @@ answers to exercise retrieval and scoring, so it is not evidence of real-model q
 See the separate [local-model verification report](artifacts/model-verification.md) for
 observed Qwen results. Model-contract failures remain visible and are not replaced with
 fixture answers.
+
+The [Bedrock verification report](artifacts/bedrock-verification.md) is independently
+labeled and records observed Nova Micro results. It is not used by default checks.
 
 ## What the fixtures establish
 
@@ -64,7 +68,7 @@ The development split exists for later lexical retrieval tuning. The holdout spl
 
 ## Scope
 
-This is a local RAG correctness and review evaluation, not a managed knowledge base, production assistant, vector-database comparison, chat-memory system, fine-tuning pipeline, or deployment project. It uses one SQLite FTS5 index and one explicitly selected local model connection; default checks remain offline and credential-free.
+This is a local RAG correctness and review evaluation, not a managed knowledge base, production assistant, vector-database comparison, chat-memory system, fine-tuning pipeline, or deployment project. It uses one SQLite FTS5 index, one local model lane, and one optional cloud comparison lane; default checks remain offline and credential-free.
 
 ## Local validation
 
@@ -101,6 +105,24 @@ The command succeeds when every case is attempted and retrieval safety checks pa
 Answer quality, abstentions, truncation, invalid output, and transport failures remain
 measured report outcomes. Default CI does not download or call the model.
 
+## Bedrock model verification
+
+With AWS shared credentials configured for Bedrock access, run the separate cloud lane:
+
+```bash
+make verify-bedrock
+```
+
+The target builds a cloud-only image with the pinned AWS SDK, mounts `~/.aws` read-only,
+and calls `amazon.nova-micro-v1:0` in `us-east-1` by default. Override `AWS_DIR` or
+`AWS_REGION` when needed. It makes one paid call per frozen case and writes
+`artifacts/bedrock-verification.json` and `.md`. Nova is forced to return the answer
+through a schema-backed Converse tool call, and the application still validates every
+field and evidence ID.
+
+The Ollama and Bedrock lanes are independent. Neither retries, routes to the other model,
+or substitutes fixture output after a failure.
+
 ## Local fixture workflow
 
 Build the bundled synthetic corpus index, then ask with scope from a caller fixture:
@@ -123,3 +145,4 @@ answer under the explicit run ID. It does not call a model or network service.
 
 - [MVP specification](docs/mvp-spec.md)
 - [Local model decision](docs/adr/0001-local-ollama-qwen.md)
+- [Optional Bedrock comparison](docs/adr/0002-bedrock-nova-micro.md)
