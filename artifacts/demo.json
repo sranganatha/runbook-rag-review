@@ -1,0 +1,60 @@
+{
+  "checks": {
+    "fixture_replay_stable": true,
+    "index_rebuild_stable": true,
+    "irrelevant_citation_rejected": true,
+    "review_correction_exported": true,
+    "stale_source_excluded": true,
+    "supported_answer": true,
+    "unsupported_question_abstained": true
+  },
+  "execution_mode": "deterministic_fixture",
+  "index_digest": "7dd0e10095f0c8eed67436fab4498559cf8b99e604dfbc91ca6fdfd07be78ee4",
+  "irrelevant_citation": {
+    "actual_status": "answered",
+    "case_id": "holdout-06-budget-thresholds",
+    "category": "supported",
+    "cited_evidence_ids": [
+      "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7"
+    ],
+    "expected_status": "answered",
+    "false_answer": false,
+    "required_facts_supported": {
+      "denominator": 2,
+      "numerator": 0
+    },
+    "retrieval_recall": {
+      "denominator": 2,
+      "numerator": 2
+    },
+    "retrieved_chunk_ids": [
+      "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7",
+      "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+      "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+      "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+      "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716"
+    ],
+    "split": "holdout",
+    "stale_chunks": 0,
+    "status_match": true,
+    "supported_claims": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "unauthorized_chunks": 0,
+    "valid_citations": {
+      "denominator": 1,
+      "numerator": 1
+    }
+  },
+  "obsolete_tag_versions": [
+    1
+  ],
+  "retrieved_current_tag_versions": [
+    2
+  ],
+  "review_version": 1,
+  "schema_version": 1,
+  "supported_run_id": "demo-supported",
+  "unsupported_status": "abstained"
+}

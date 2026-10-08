@@ -1,0 +1,132 @@
+{
+  "runs": [
+    {
+      "reviews": [
+        {
+          "answer_version": 1,
+          "corrected_claims": [
+            "At 80 percent of monthly budget, notify the service owner and attach current forecast. At 100 percent, open a finance review ticket and notify the portfolio owner."
+          ],
+          "corrected_evidence_ids": [
+            "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7"
+          ],
+          "decision": "correct",
+          "rationale": "Clarify the answer while retaining captured evidence.",
+          "resulting_answer_version": 2,
+          "review_sha256": "032e6020d331da752067285bc05cd164546c4c8154a4f595582f668bc0cf731f",
+          "review_version": 1,
+          "reviewed_at": "2026-09-04T12:00:00+00:00",
+          "reviewer_id": "reviewer-fixture-1",
+          "run_id": "demo-supported",
+          "run_snapshot_sha256": "ea8401bcd992385f044ba9b3f3ec3c69d3d72bdac833b748845598e28fc81724",
+          "schema_version": 1
+        }
+      ],
+      "run": {
+        "answer": {
+          "attempted_calls": 1,
+          "claims": [
+            {
+              "evidence_ids": [
+                "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7"
+              ],
+              "text": "At 80 percent of monthly budget, notify the service owner and attach current forecast. At 100 percent, open a finance review ticket and notify the portfolio owner."
+            }
+          ],
+          "elapsed_ms": 0,
+          "generation_mode": "fixture",
+          "limits": {
+            "max_calls": 1,
+            "max_claims": 8,
+            "max_context_chars": 12000,
+            "max_evidence_per_claim": 5,
+            "max_output_chars": 4000
+          },
+          "model_id": "deterministic-context-fixture-v1",
+          "reason": null,
+          "status": "answered",
+          "usage_tokens": null
+        },
+        "answer_version": 1,
+        "question": "What actions occur at 80 and 100 percent of monthly budget?",
+        "retrieval": {
+          "as_of": "2026-02-01",
+          "authorized_scope": "finops",
+          "evidence": [
+            {
+              "chunk_id": "e010c6816e7ad2701057b2e4078781041ba5b1f659365aa9e9b7825449c849b7",
+              "document_id": "budget-alerts",
+              "document_version": 1,
+              "effective_from": "2025-01-01",
+              "effective_to": null,
+              "end_offset": 163,
+              "score": -13.506938261305315,
+              "start_offset": 0,
+              "team_scope": "finops",
+              "text": "At 80 percent of monthly budget, notify the service owner and attach current forecast. At 100 percent, open a finance review ticket and notify the portfolio owner.",
+              "text_sha256": "9aee20c5fcc25dbb29501a291f150ba7ff6e3ca1304b0df6e5ee3f31611c266f"
+            },
+            {
+              "chunk_id": "cddbdccef443d8de02696366e551e8d3579af09da6412961a7a182754d2e347d",
+              "document_id": "anomaly-escalation",
+              "document_version": 1,
+              "effective_from": "2025-05-01",
+              "effective_to": null,
+              "end_offset": 150,
+              "score": -3.634070561816733,
+              "start_offset": 0,
+              "team_scope": "finops",
+              "text": "For a daily service-cost increase of at least 20 percent and 500 dollars above baseline, page the platform duty manager rather than the service owner.",
+              "text_sha256": "0c7dd337acf2b07ead6cdb386bdbbcbabc34b82221e7acb23bb17e6d9d2b51a5"
+            },
+            {
+              "chunk_id": "09b7adbad839112b4da6f0256c69130d96d85415b88a7ddc37ac8958e41a086b",
+              "document_id": "anomaly-triage",
+              "document_version": 1,
+              "effective_from": "2025-05-01",
+              "effective_to": null,
+              "end_offset": 141,
+              "score": -2.733397127234716,
+              "start_offset": 0,
+              "team_scope": "finops",
+              "text": "Open a severity-two investigation when daily service cost is at least 20 percent and 500 dollars above its twenty-eight-day weekday baseline.",
+              "text_sha256": "f87b0016b6a251103c34a53422c6734dc04ae538379e112be02e58bbf7b02700"
+            },
+            {
+              "chunk_id": "9027a32c5bcc0d4538269be3d226c75713c3aa840135626f9b9fedd0c4e30795",
+              "document_id": "commitment-planning",
+              "document_version": 1,
+              "effective_from": "2025-02-01",
+              "effective_to": null,
+              "end_offset": 177,
+              "score": -2.5176393274103486,
+              "start_offset": 0,
+              "team_scope": "finops",
+              "text": "Use the trailing sixty days of hourly eligible usage to size a proposed commitment. The recommended committed quantity must not exceed 70 percent of the observed hourly minimum.",
+              "text_sha256": "a1245ebe03b3a64e0c23c6077418904e79b255bb145b52579bbe5461778b7a4d"
+            },
+            {
+              "chunk_id": "5ba181c85f21b6ebc41aff4ee2f1b2722e78b4c3b7cb5d512ccc45f599c6c716",
+              "document_id": "budget-alerts",
+              "document_version": 1,
+              "effective_from": "2025-01-01",
+              "effective_to": null,
+              "end_offset": 285,
+              "score": -2.3655237066640997,
+              "start_offset": 165,
+              "team_scope": "finops",
+              "text": "A budget alert does not authorize shutdown. Any service change follows the service's normal change and incident process.",
+              "text_sha256": "2f73245f674f62d0afd94089b384a884075c22fab116ae7fde632cf9a9ff21a3"
+            }
+          ],
+          "index_digest": "7dd0e10095f0c8eed67436fab4498559cf8b99e604dfbc91ca6fdfd07be78ee4",
+          "query": "What actions occur at 80 and 100 percent of monthly budget?"
+        },
+        "run_id": "demo-supported",
+        "schema_version": 1,
+        "snapshot_sha256": "ea8401bcd992385f044ba9b3f3ec3c69d3d72bdac833b748845598e28fc81724"
+      }
+    }
+  ],
+  "schema_version": 1
+}

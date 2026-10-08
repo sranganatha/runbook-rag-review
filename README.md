@@ -47,6 +47,7 @@ The current implementation provides:
 - Accept, reject, and correct review decisions with stale-answer protection
 - Complete fixed-label development and holdout reporting with separate safety metrics
 - Local ingest and fixture-backed ask commands with immutable saved runs
+- Deterministic offline demo with replay checks and validated feedback export
 - Bounded local-model verification with Qwen 2.5 1.5B served by Ollama in Podman
 - Optional bounded cloud verification with Amazon Nova Micro through Bedrock
 
@@ -79,12 +80,27 @@ git clone https://github.com/sranganatha/runbook-rag-review.git
 cd runbook-rag-review
 podman info
 make test-container
+make demo
 ```
 
 For source development with Python 3.12 already available, `make check`, `make test`, and
 `make report` use only the standard library. Expect
 `validated 12 documents and 20 questions (8 development, 12 holdout)`. No validation or
 report command calls a model or network service.
+
+## Offline demo
+
+`make demo` is the account-free, one-command demonstration. It runs inside Podman with
+networking disabled and writes [demo evidence](artifacts/demo.md) plus the validated
+[feedback export](artifacts/feedback.json). The command fails unless all seven checks pass:
+
+- Rebuilding the same corpus produces the same index identity.
+- Replaying fixture generation produces the same normalized retrieval and answer.
+- Supported evidence produces an answer.
+- Obsolete guidance is excluded in favor of the current document version.
+- Missing evidence produces an abstention.
+- A reviewer correction remains tied to the exact saved answer and evidence.
+- A real citation ID with an unsupported claim fails support evaluation.
 
 ## Local model verification
 
