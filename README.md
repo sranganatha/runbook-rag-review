@@ -10,7 +10,7 @@ A local evaluation of whether answers over versioned operational runbooks are su
 
 Runbook answers can look trustworthy while citing stale guidance, another team's procedure, an irrelevant passage, or a document instruction that should never be followed. Citation presence alone cannot distinguish those failures from a grounded answer.
 
-Runbook RAG Review is a bounded evaluation project that will keep retrieval, answer generation, support scoring, and human review separate. Its synthetic FinOps corpus makes those failure modes inspectable without private operational data or a cloud account.
+Runbook RAG Review is a bounded evaluation project that keeps retrieval, answer generation, support scoring, and human review separate. Its synthetic FinOps corpus makes those failure modes inspectable without private operational data or a cloud account.
 
 ## Evaluation workflow
 
@@ -47,11 +47,14 @@ The current implementation provides:
 - Accept, reject, and correct review decisions with stale-answer protection
 - Complete fixed-label development and holdout reporting with separate safety metrics
 - Local ingest and fixture-backed ask commands with immutable saved runs
+- Bounded local-model verification with Qwen 2.5 1.5B served by Ollama in Podman
 
 See the [offline evaluation report](artifacts/evaluation.md). It uses deterministic fixture
 answers to exercise retrieval and scoring, so it is not evidence of real-model quality.
 
-Real-model generation is not implemented yet.
+See the separate [local-model verification report](artifacts/model-verification.md) for
+observed Qwen results. Model-contract failures remain visible and are not replaced with
+fixture answers.
 
 ## What the fixtures establish
 
@@ -61,7 +64,7 @@ The development split exists for later lexical retrieval tuning. The holdout spl
 
 ## Scope
 
-This is a local RAG correctness and review evaluation, not a managed knowledge base, production assistant, vector-database comparison, chat-memory system, fine-tuning pipeline, or deployment project. It uses one SQLite FTS5 index and will add one explicitly selected model connection; default checks remain offline and credential-free.
+This is a local RAG correctness and review evaluation, not a managed knowledge base, production assistant, vector-database comparison, chat-memory system, fine-tuning pipeline, or deployment project. It uses one SQLite FTS5 index and one explicitly selected local model connection; default checks remain offline and credential-free.
 
 ## Local validation
 
@@ -78,6 +81,25 @@ For source development with Python 3.12 already available, `make check`, `make t
 `make report` use only the standard library. Expect
 `validated 12 documents and 20 questions (8 development, 12 holdout)`. No validation or
 report command calls a model or network service.
+
+## Local model verification
+
+Run the separately labeled real-model check through Make and Podman:
+
+```bash
+make verify-model
+```
+
+The first run downloads the pinned Ollama image and about 986 MB of Qwen model data into
+the `runbook-rag-review-ollama-models` Podman volume. Later runs reuse that volume. The
+command makes exactly one bounded model call for each of the twenty frozen cases, writes
+JSON and Markdown reports under `artifacts/`, and shuts down the Compose stack. It needs
+no cloud account, API key, host Python package, or paid inference call. CPU runtime varies
+by machine.
+
+The command succeeds when every case is attempted and retrieval safety checks pass.
+Answer quality, abstentions, truncation, invalid output, and transport failures remain
+measured report outcomes. Default CI does not download or call the model.
 
 ## Local fixture workflow
 
@@ -100,3 +122,4 @@ answer under the explicit run ID. It does not call a model or network service.
 ## Design reference
 
 - [MVP specification](docs/mvp-spec.md)
+- [Local model decision](docs/adr/0001-local-ollama-qwen.md)
