@@ -159,6 +159,7 @@ answer under the explicit run ID. It does not call a model or network service.
 
 ## Design reference
 
+- [Release history](CHANGELOG.md)
 - [MVP specification](docs/mvp-spec.md)
 - [Local model decision](docs/adr/0001-local-ollama-qwen.md)
 - [Optional Bedrock comparison](docs/adr/0002-bedrock-nova-micro.md)
