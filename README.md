@@ -88,11 +88,12 @@ For source development with Python 3.12 already available, `make check`, `make t
 `validated 12 documents and 20 questions (8 development, 12 holdout)`. No validation or
 report command calls a model or network service.
 
-## Offline demo
+## Reproducible verification
 
-`make demo` is the account-free, one-command demonstration. It runs inside Podman with
-networking disabled and writes [demo evidence](artifacts/demo.md) plus the validated
-[feedback export](artifacts/feedback.json). The command fails unless all seven checks pass:
+`make demo` is the account-free verification command. It runs inside Podman with
+networking disabled and writes [verification evidence](artifacts/demo.md) plus the
+validated [feedback export](artifacts/feedback.json). The command fails unless all seven
+checks pass:
 
 - Rebuilding the same corpus produces the same index identity.
 - Replaying fixture generation produces the same normalized retrieval and answer.
