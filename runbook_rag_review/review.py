@@ -14,6 +14,7 @@ from runbook_rag_review.retrieve import RetrievalResult
 
 RUN_SCHEMA_VERSION = 1
 REVIEW_SCHEMA_VERSION = 1
+FEEDBACK_SCHEMA_VERSION = 1
 
 
 def save_run_snapshot(
@@ -190,6 +191,33 @@ def load_reviewer_ids(path: Path) -> set[str]:
     ):
         raise ContractError("invalid_reviewer_fixture", str(path))
     return set(records)
+
+
+def export_feedback(store_dir: Path, output_path: Path) -> dict[str, Any]:
+    runs = []
+    run_dir = store_dir / "runs"
+    for path in sorted(run_dir.glob("*.json")) if run_dir.is_dir() else []:
+        snapshot = _read_hashed_json(
+            path, "snapshot_sha256", "run_snapshot_tampered"
+        )
+        run_id = snapshot.get("run_id")
+        if not isinstance(run_id, str) or not run_id.strip():
+            raise ContractError("invalid_run_id", str(path))
+        runs.append(
+            {
+                "run": snapshot,
+                "reviews": load_review_history(store_dir, run_id),
+            }
+        )
+    runs.sort(key=lambda item: item["run"]["run_id"])
+    export = {"schema_version": FEEDBACK_SCHEMA_VERSION, "runs": runs}
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        json.dumps(export, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    return export
 
 
 def _run_key(run_id: str) -> str:
