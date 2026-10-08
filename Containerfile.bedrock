@@ -1,0 +1,12 @@
+FROM docker.io/library/python:3.12-slim
+
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /app
+RUN python -m pip install --no-cache-dir boto3==1.43.97
+COPY . .
+
+RUN python -m compileall -q runbook_rag_review tests \
+    && python -m runbook_rag_review.validate_fixtures
+
+CMD ["python", "-m", "runbook_rag_review.verify_bedrock", "artifacts"]

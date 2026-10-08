@@ -33,9 +33,13 @@ def run_model_verification(
     fixture_dir: Path,
     output_dir: Path,
     *,
-    endpoint: str,
+    endpoint: str | None = None,
     provider_call: Callable[[str], ProviderResponse] | None = None,
     k: int = 5,
+    execution_mode: str = "real_local_model",
+    model_metadata: dict[str, Any] | None = None,
+    artifact_stem: str = "model-verification",
+    run_id_prefix: str = "model-verification",
 ) -> dict[str, Any]:
     document_records = json.loads((fixture_dir / "documents.json").read_bytes())
     question_records = json.loads((fixture_dir / "questions.json").read_bytes())
@@ -43,6 +47,8 @@ def run_model_verification(
     if len(labels) > MODEL_CALL_LIMIT:
         raise ContractError("model_call_budget_exceeded", str(len(labels)))
     if provider_call is None:
+        if endpoint is None:
+            raise ContractError("invalid_provider_endpoint", "Ollama endpoint is required")
         provider_call = partial(
             ollama_response,
             endpoint=endpoint,
@@ -80,7 +86,7 @@ def run_model_verification(
             }
             try:
                 answer = generate_answer(
-                    f"model-verification:{label.case_id}",
+                    f"{run_id_prefix}:{label.case_id}",
                     label.question,
                     retrieval,
                     capture_provider_response,
@@ -97,8 +103,8 @@ def run_model_verification(
 
     report = {
         "schema_version": 1,
-        "execution_mode": "real_local_model",
-        "model": {
+        "execution_mode": execution_mode,
+        "model": model_metadata or {
             "provider": "ollama",
             "model_id": OLLAMA_MODEL_ID,
             "endpoint_kind": "local_container",
@@ -127,12 +133,12 @@ def run_model_verification(
         for case in cases
     )
     output_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "model-verification.json").write_text(
+    (output_dir / f"{artifact_stem}.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
         newline="\n",
     )
-    (output_dir / "model-verification.md").write_text(
+    (output_dir / f"{artifact_stem}.md").write_text(
         _markdown(report), encoding="utf-8", newline="\n"
     )
     return report
@@ -222,12 +228,14 @@ def _summarize(cases: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def _markdown(report: dict[str, Any]) -> str:
+    provider_label = report["model"]["provider"].replace("_", " ").title()
     lines = [
-        "# Local Model Verification",
+        f"# {provider_label} Model Verification",
         "",
-        "Execution mode: `real_local_model`. Results are observed, not fixture output.",
+        f"Execution mode: `{report['execution_mode']}`. "
+        "Results are observed, not fixture output.",
         "",
-        f"Model: `{report['model']['model_id']}` served by Ollama in Podman.",
+        f"Model: `{report['model']['model_id']}` via {provider_label}.",
         "",
         "## Summary",
         "",
