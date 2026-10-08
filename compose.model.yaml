@@ -1,0 +1,37 @@
+services:
+  ollama:
+    image: docker.io/ollama/ollama:0.40.0@sha256:2b28812c24b17215d15f8f1c0c2bf939d3b5426ba1e8bea15b046f43d5bd2746
+    volumes:
+      - ollama-models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  pull-model:
+    image: docker.io/ollama/ollama:0.40.0@sha256:2b28812c24b17215d15f8f1c0c2bf939d3b5426ba1e8bea15b046f43d5bd2746
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["ollama"]
+    command: ["pull", "qwen2.5:1.5b"]
+
+  verify:
+    build:
+      context: .
+      dockerfile: Containerfile
+    depends_on:
+      pull-model:
+        condition: service_completed_successfully
+    environment:
+      OLLAMA_URL: http://ollama:11434
+    volumes:
+      - ./artifacts:/app/artifacts
+    command: ["python", "-m", "runbook_rag_review.verify_model", "artifacts"]
+
+volumes:
+  ollama-models:
+    name: runbook-rag-review-ollama-models

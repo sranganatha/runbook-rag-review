@@ -80,6 +80,8 @@ def generate_answer(
         raise ContractError("context_budget_exceeded", "retrieval context is too large")
     try:
         response = provider_call(context_json)
+    except ContractError:
+        raise
     except Exception as error:
         raise ContractError("provider_transport_error", "provider call failed") from error
     if not isinstance(response, ProviderResponse):
